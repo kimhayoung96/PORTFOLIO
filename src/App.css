@@ -1,0 +1,334 @@
+@charset 'utf-8';
+@font-face {
+  font-family: 'SUIT-Medium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Medium.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 시그니처 : #53a6e6 1231214*/
+/* reset */
+*{
+  margin:0;
+  padding:0;
+  font-size:18px;
+  font-family:'SUIT-Medium';
+}
+
+ul, ol, li {
+  list-style:none;
+  -ms-user-select: none; 
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+a:link, a:hover {
+  color:#000;
+  text-decoration: none;
+}
+html {
+  scroll-behavior: smooth;
+}
+p, img, a, span{
+  -ms-user-select: none; 
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+/* 헤더영역 */
+.head_tot{
+  position: fixed;
+  display: block;
+  width: 100%;
+  height: 91px;
+  background-color: #ffffff;
+}
+.head_div {
+  position:fixed;
+  z-index: 1111;
+  left:50%;
+  top:20px;
+  display: flex;
+  flex-flow:row nowrap;
+  justify-content: space-evenly;
+  width:1100px;
+  height: 70px;
+  margin:0 auto;
+  margin-left: -550px;
+  background:#fff;
+  box-shadow:#eee 0 1px 0 0;
+  border-radius:50px;
+}
+.head_div .logo {
+  display: block;
+  width:50px;
+  height:70px;
+  text-indent:-9999px;
+  background: url('./images/hlogo.png') no-repeat center;
+  background-size: 100%;
+}
+.head_div .gnb {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  height: 70px;
+}
+.head_div .gnb > li {
+  margin:0 10px 0 0;
+
+}
+.head_div .gnb > li > a{
+  line-height: 70px;
+  font-weight:600;
+}
+.head_div .gnb > li > a:hover{
+  color:#53a6e6;
+  text-decoration: none;
+}
+#profile {
+  padding:100px 0 0;
+}
+.portfolio_tot, .profile_tot {
+  width: 1100px;
+  margin:0 auto;
+}
+
+.paragraph_div {
+  width: 400px;
+  margin:80px auto;
+  border-bottom:1px solid #eee;
+}
+/* 프로필영역 */
+
+.profile_space {
+  width: 1100px;
+  height: 315px;
+  margin:30px auto;
+  background:url('./images/woman-gbef844973_1280.png')no-repeat right bottom;
+  background-size: 30%;
+}
+
+.profile_space > h3 {
+  font-weight: 800;
+}
+.profile_space > h3 > span {
+  color:#53a6e6;
+  font-size: 25px !important;
+}
+/* 포트폴리오 영역 */
+.ppoverflow{
+  overflow:hidden;
+  width: 1100px;
+  margin:0 auto;
+}
+.ppoverflow > h3{
+  display: flex;
+  margin:20px 0;
+}
+.ppoverflow > h3 :after {
+  content: "";
+  display: block;
+  width: 930px;
+  height: 16px;
+  margin-left: 20px;
+  border-bottom: 2px solid #000;
+}
+.portfolio_tot {
+  display: flex;
+  flex-flow: row nowrap;
+  width:auto;
+}
+
+
+.job_tot {
+  width:400px;
+  margin:0 20px 0 0;
+}
+.job_tot > .uk-card-media-top > img{
+  display: block;
+  margin:0 auto;
+  padding:40px 0 0;
+}
+.job_tot > .job > ul > li {
+  font-size:15px;
+  
+}
+.job_tot > .job > .btn {
+  display:flex;
+  justify-content: flex-end;
+
+}
+.job_tot > .job > .btn > a {
+  display: block;
+  width:120px;
+  height:40px;
+  line-height: 40px;
+  color:#53a6e6;
+  font-weight:300;
+  font-size: 15px;
+  text-align: center;
+  background-color: #fff;
+  border:1px solid #53a6e6;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+.job_tot > .job > .btn > a:nth-child(1){
+  margin-right:10px;
+}
+.job_tot > .job > a:hover {
+  color:#000;
+  background-color:#53a6e6;
+}
+
+/* 푸터영역 */
+
+
+/* 팝업 */
+.contact_me {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  z-index: 100;
+  display: flex;
+  width:200px;
+  height: 70px;
+  color:#fff;
+  background-color: #53a6e6;
+  border-radius: 50px;
+  cursor:pointer;
+  box-shadow:#eee 0 3px 1px 0;
+}
+.contact_me > img {
+  display: block;
+  width: 50px;
+  height: 50px;
+  margin:10px;
+  border-radius: 50%;
+}
+.contact_me > p {
+  text-align: center;
+  line-height: 70px;
+  text-indent: 10px;
+}
+.contact_me > p:after{
+  content:"CONNECT"
+}
+
+.connect_sns {
+  position: fixed;
+  z-index: 1;
+  right: 0;
+  bottom: 0;
+  width: 160px;
+  height: 40px;
+}
+.connect_sns > li {
+  position: absolute;
+  bottom:10px;
+  right:30px;
+  width: 160px;
+  height: 40px;
+  margin:10px 0;
+  border-radius:50px;
+  box-shadow:#eee 0 1px 1px 0;
+}
+.connect_sns > li > a {
+  display: block;
+  color:#000;
+  font-size: 13px;
+  line-height: 40px;
+  text-indent: 20px;
+  text-align: center;
+  border-radius:50px;
+}
+.connect_sns > li > a:hover{
+  text-decoration: none;
+  color:#000;
+}
+.connect_sns > li:nth-child(1){
+  z-index: 10;
+  background: #c6e6ff url(./images/envelope.png) no-repeat 20px center;
+  background-size: 8%;
+}
+.connect_sns > li:nth-child(2){
+  z-index: 5;
+  background: #c6e6ff url(./images/phone-call.png) no-repeat 20px center;
+  background-size: 8%;
+}
+
+
+@media screen and (max-width:450px){
+  body{
+    width:100%;
+  }
+  .paragraph_div {
+    width: 100%;
+    margin:80px auto;
+    border-bottom:1px solid #eee;
+  }
+  .portfolio_tot, .profile_tot {
+    width:100%;
+    margin:0 auto;
+  }
+  .contact_me{
+    display: none;
+  }
+
+  .head_div {
+    display: flex;
+    flex-flow:column nowrap;
+    justify-content: space-evenly;
+    top:10px;
+    left:10px;
+    width:100px;
+    height:70px;
+    margin:0 auto;
+    background:inherit;
+    box-shadow:inherit;
+    border-radius: inherit;
+  }
+  .head_div .logo {
+    display: block;
+    width:50px;
+    height:50px;
+    text-indent:-9999px;
+    background: url('./images/hlogo.png') no-repeat center;
+    background-size: 100%;
+  }
+  .head_div .gnb {
+    display: none;
+  }
+
+  .head_div .gnb > li > a{
+    line-height: 50px;
+    font-weight:600;
+    font-size: 13px;
+  }
+
+  /* 프로필영역 */
+  #profile{
+    width:100%;
+  }
+  .profile_space {
+    width: 100%;
+    height: auto;
+    margin:30px 0;
+    padding: 0 10px;
+    background:url('./images/woman-gbef844973_1280.png')no-repeat center top;
+    background-size: 75%;
+  }
+  .profile_space > h3 {
+    padding:300px 0 0;
+  }
+  .profile_space > p {
+    width:100%;
+  }
+
+  .job_tot {
+    width:100%;
+    margin: 0 auto;
+  }
+}
