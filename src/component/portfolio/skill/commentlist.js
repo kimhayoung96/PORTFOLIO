@@ -1,31 +1,32 @@
-import React ,{useState, useEffect}from 'react';
+import React from 'react'
+function Comment({user}){
+    return(
+        <>
+        <li>
+            <span class="name">
+                {user.username}
+            </span>
+            <span class="cmt">
+                {user.usercomment}
+            </span>
+        </li>
 
 
-function User ({user, onRemove}){
+        </>
+    )
+}
+function commentList ({users}){
+    return(
 
-    const { username, usercomment, id} = user;
-        return (
-            <>
-                <form >
-                    <ul>
-                        <li><span></span><span>{username}</span>{usercomment}</li>
-                    </ul>
-                </form>
-                <button onClick={()=>onRemove(id)}>삭제</button>
-            </>
-        )
-    }
- 
-function removeComment({users, onRemove}) {
-    return (
-        <div>
-          {
-              users.map(
-                  user => (<User user={user} key={user.id} onRemove={onRemove}/>)
-              )
-          }
-        </div>
+        <>
+        <form>
+            <ul class="userlist">
+                {users.map(user=>(<Comment user={user} key={user.id}/>))}
+
+            </ul>
+        </form>
+        </>
     )
 }
 
-export default removeComment;
+export default commentList;

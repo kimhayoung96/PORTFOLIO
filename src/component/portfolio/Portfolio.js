@@ -1,75 +1,49 @@
 import React, { useState, useRef } from 'react'
 import { useEffect } from 'react';
 import PP1 from './list/PP1';
-import CommentComponent from './skill/comment';
-import CommentList from './skill/commentlist';
-import { useSelector } from 'react-redux';
-import { useDispatch } from 'react-redux';
-import $ from 'jquery';
+import CommentInput from './skill/comment';
+import CommentList from './skill/commentlist'
+
 
 function Portfolio (){
-    
     const [inputs, setInputs] = useState({
-        username: '',
-        usercomment: '',
+        username:'',
+        usercomment:''
     })
-    useEffect(()=>{
-        document.title=`이건 username : ${username}`
-    })
-
     const {username, usercomment} = inputs;
-    const onChange = e => {
-    const {name, value} = e.target;
-    setInputs({
-        ...inputs,
-        [name]: value
-    })
-    }
-    const [users, setUsers] = useState([]);
-    
-    const nextId = useRef(0);
-    
-    const onCreate = () =>{
-        const user = {
-            id: nextId.current,
-            username,
-            usercomment,
-        }
-        setUsers([...users, user])
+    const onChange = e =>{
+        const {name, value} = e.target;
         setInputs({
-            username: '',
-            usercomment: ''
-    })
-    //console.log(nextId.current);
-    nextId.current += 1;
-    }
-    const onRemove = id=>{
-        setUsers(users.filter(user=>user.id !== id));
-    }
-
-    const [check, setCheck] = useState(false);
-    
-    const onCreated = ()=>{
-        const userObj = {name : username};
-        window.localStorage.setItem("userName",JSON.stringify(userObj));
-        const user = {
-            id: nextId.current,
-            username,
-            usercomment,
-        }
-        setUsers([...users, user])
-        setInputs({
-            username: '',
-            usercomment: ''
+            ...inputs,
+            [name]:value
         })
-        //console.log(nextId.current);
+    }
+    const [users, setUsers] = useState([
+        {
+          id:1,
+          username:'김하영',
+          usercomment:'반가워요'
+        },
+        {
+          id:2,
+          username:'방흥위',
+          usercomment:'신기해요'
+        }
+    ])   
+    const nextId = useRef(3);
+    const onCreate = ()=>{
+        const user = {
+            id:nextId.current,
+            username,
+            usercomment
+        }
+        setUsers([...users, user])
+        setInputs({
+            username:'',
+            usercomment:''
+        })
         nextId.current += 1;
     }
-    const callData = ()=>{
-        setCheck(true);
-    };
-
-  
     return(
         <>  
             <div className='ppoverflow'>
@@ -82,11 +56,11 @@ function Portfolio (){
                     <PP1></PP1>
                 </div>
             </div>
-            <div className='ppoverflow'>
+            <div className='ppoverflow comment_area'>
                 <h3>Comment<span></span></h3>
                 <div className='comment'>
-                    <CommentComponent username={username} usercomment={usercomment} onChange={onChange} onCreate={onCreate} />
-                    <CommentList users={users} onRemove={onRemove} />
+                    <CommentInput onChange={onChange} username={username} usercomment={usercomment} onCreate={onCreate}/>
+                    <CommentList users={users}/>
                 </div>
             </div>
 

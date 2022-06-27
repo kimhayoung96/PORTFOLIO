@@ -4,6 +4,7 @@ import $ from 'jquery'
 // 헤더영역1
 import Header from './component/header/Header';
 import './css/uikit-3.14.3/css/uikit.css'
+import logoImg from './images/hlogo.png'
 // 섹션영역
 import Profile from './component/section/Profile';
 import Portfolio from './component/portfolio/Portfolio';
@@ -90,13 +91,20 @@ $(function(){
   bindEvents();
   ////출처: https://nohack.tistory.com/123 [lucid_dream:티스토리1234]
 
-
+  $(window).on('load',function(){
+    $('.loading').delay(8000).fadeOut()
+    $('.App').delay(9000).fadeIn()
+  })
 })
 // ----------------------------------------------------------------
 function App() {
-  
+
   return (
     <>
+      <div className="loading">
+        <img src={logoImg} alt="img"/>
+        <p>로딩중입니다. 잠시만 기다려 주세요.</p>
+      </div>
       <div className="App">
         <header id="head_tot">
           <Header />

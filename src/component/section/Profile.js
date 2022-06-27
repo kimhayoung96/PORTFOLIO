@@ -12,7 +12,9 @@ class Profile extends Component{
                         새로운 변화와 도전을 즐겁게 받아들일 준비가 되어 있습니다!
                     </p>
                 </div>
-
+                <div className="ability">
+                    
+                </div>
             </div>
         )
     }

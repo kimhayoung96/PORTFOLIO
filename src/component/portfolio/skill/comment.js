@@ -1,30 +1,19 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 
-function CommentComponent({username, usercomment, onChange, onCreated, callData, onCreate}){
-    
+function CommentInput({onChange, username, usercomment, onCreate}){
+
     return(
         <>
-            <h3>방명록을 남겨주세요!</h3>
-            <div>
-                <input 
-                    name="username"
-                    placeholder="이름"
-                    value={username}
-                    onChange={onChange}
-                />
-                <input 
-                    name="usercomment"
-                    placeholder="여기에 입력 해 주세요"
-                    value={usercomment}
-                    onChange={onChange}
-                />
-                <button type="submit" onClick={onCreated}>입력s</button>
-                <button type="submit" onClick={callData}>가져오기</button>
-
+        <div className='commentInput'>
+            <div className="input_cont">
+                <input name='username' placeholder="이름" onChange={onChange} value={username} ></input>
+                <input name= 'usercomment' placeholder="내용을 남겨주세요" onChange={onChange} value={usercomment} ></input>
             </div>
+            <button type='button' onClick={onCreate}>등록</button>
+        </div>
         </>
     )
 
 }
 
-export default CommentComponent;
+export default CommentInput;
